@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dz.factory.management.mapper.CodeMapper">
+	<select id="selCodeAll" resultType="Code">
+		select * from code_common
+	</select>
+
+	<select id="selManageCodeAll" resultType="ManageCode">
+		select * from
+		code_management
+	</select>
+
+	<insert id="insertCode" parameterType="Code">
+		insert into code_common
+		(common_code,common_name,management_code,company_id)
+		values(#{common_code},#{common_name},#{management_code},#{company_id})
+	</insert>
+
+	<delete id="deleteCode" parameterType="Code">
+		DELETE FROM
+		code_common WHERE common_code = #{common_code} and management_code = #{management_code}
+	</delete>
+
+	<select id="selSameOne" parameterType="Code"  resultType="Code">
+		select * from code_common where management_code =#{management_code} and
+		common_code = #{common_code}
+	</select>
+
+</mapper>
