@@ -88,7 +88,6 @@ public class ProductionListService {
 		//production_detail table
 		for(int i=0;i<edited.size();i++) {
 			ProductionDetailDto detailDto = new ProductionDetailDto();
-			detailDto.setCompany_id((int) edited.get(i).get("companyId"));
 			
 			Integer companyId = (Integer) edited.get(i).get("companyId");
 			detailDto.setCompany_id(companyId != null ? companyId : 0);
@@ -147,13 +146,19 @@ public class ProductionListService {
 	public void deleteProduction(ArrayList<HashMap<String,?>> delete) {
 		for(HashMap<String,?> data : delete) {
 			ProductionDto productionDto = new ProductionDto();
-			
-			productionDto.setCompany_id((int) data.get("companyId"));
-			productionDto.setProduction_id((int) data.get("productionId"));
+
+			Integer companyId = (Integer) data.get("companyId");
+			productionDto.setCompany_id(companyId != null ? companyId : 0);
+
+			Integer productionIdInteger = (Integer) data.get("productionId");
+			productionDto.setProduction_id(productionIdInteger != null ? productionIdInteger : 0);
+
 			productionDto.setProduction_code(String.valueOf(data.get("productionCode")));
+
 			System.out.println("======delete======");
 			System.out.println(productionDto);
 			listMapper.deleteProduction(productionDto);
+
 		}
 	}
 }
