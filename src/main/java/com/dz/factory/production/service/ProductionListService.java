@@ -28,15 +28,6 @@ public class ProductionListService {
 		System.out.println(searchFilter);
 		ArrayList<HashMap<String, ?>> productionList = new ArrayList<>();
 
-//		for (Map.Entry<String, ?> entry : searchFilter.entrySet()) {
-////			System.out.println(entry);
-//			if (entry.getKey().toLowerCase().contains("date")
-//					|| entry.getKey().equals("description")
-//					|| entry.getKey().toLowerCase().contains("code")) {				
-//				filter.put(entry.getKey().toString(), entry.getValue());
-//			}
-//		}
-
 		productionList = listMapper.getProductionList(searchFilter);
 		//production 받아온 후 code array get
 		ArrayList<String> productionCode = new ArrayList<String>();
