@@ -15,11 +15,8 @@
 	<name>dz-team-project</name>
 	<description>dz team2 project</description>
 	<properties>
-		<java.version>1.8</java.version>
-		 <maven.compiler.source>1.8</maven.compiler.source>
-   		 <maven.compiler.target>1.8</maven.compiler.target>
+		<java.version>11</java.version>
 	</properties>
-	
 	<dependencies>
 
 		<dependency>
@@ -36,10 +33,9 @@
 
 
 		<dependency>
-		    <groupId>org.mariadb.jdbc</groupId>
-		    <artifactId>mariadb-java-client</artifactId>
-		    <version>2.1.2</version>
-		    <scope>runtime</scope>
+			<groupId>org.mariadb.jdbc</groupId>
+			<artifactId>mariadb-java-client</artifactId>
+			<scope>runtime</scope>
 		</dependency>
 
 		<dependency>
@@ -83,15 +79,13 @@
 
 	</dependencies>
 
-
-    <build>
-        <finalName>prac</finalName> <!-- 생성될 jar 파일의 이름을 지정. 여기서는 'prac'로 지정하였음 -->
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-        </plugins>
-    </build>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
 
 </project>

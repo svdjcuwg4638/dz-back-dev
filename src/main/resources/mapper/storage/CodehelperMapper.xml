@@ -7,6 +7,8 @@
 	<select id="selectStorageCode" resultType="Storage">
 		select storage_code, storage_name from storage
 	</select>
+<select id="">
+</select>
 
 
 </mapper>
