@@ -89,9 +89,13 @@ public class ProductionListService {
 		for(int i=0;i<edited.size();i++) {
 			ProductionDetailDto detailDto = new ProductionDetailDto();
 			detailDto.setCompany_id((int) edited.get(i).get("companyId"));
-			detailDto.setProduction_id((int)edited.get(i).get("productionId"));
-			detailDto.setProduction_code((String) edited.get(i).get("productionCode"));
+			
+			Integer companyId = (Integer) edited.get(i).get("companyId");
+			detailDto.setCompany_id(companyId != null ? companyId : 0);
+			Integer productionId = (Integer) edited.get(i).get("productionId");
+			detailDto.setProduction_id(productionId != null ? productionId : 0);
 			detailDto.setItem_code((String) edited.get(i).get("itemCode"));
+			
 			detailDto.setQuantity(Integer.parseInt((edited.get(i).get("quantity")).toString()));
 			detailDto.setLine_code((String) edited.get(i).get("lineCode"));
 			detailDto.setDescription((String) edited.get(i).get("description"));
@@ -115,14 +119,20 @@ public class ProductionListService {
 		for(int i=0; i<component.size(); i++) {				
 			ComponentDto componentDto = new ComponentDto();
 			
-			componentDto.setCompany_id((int) component.get(i).get("companyId"));
+			Integer companyId = (Integer) component.get(i).get("companyId");
+			componentDto.setCompany_id(companyId != null ? companyId : 0);
 
-			String itemCode = (component.get(i).get("itemCode")).toString();
-			String locationCode = (component.get(i).get("locationCode")).toString();
-			String storageCode = (component.get(i).get("storageCode")).toString();
-			String productionCode = (component.get(i).get("productionCode")).toString();
-			int productionId = (int)((component.get(i).get("productionId")));
-			int quantity = (int)(component.get(i).get("quantity"));
+			String itemCode = (String) component.get(i).get("itemCode");
+			String locationCode = (String) component.get(i).get("locationCode");
+			String storageCode = (String) component.get(i).get("storageCode");
+			String productionCode = (String) component.get(i).get("productionCode");
+
+			Integer productionIdInteger = (Integer) component.get(i).get("productionId");
+			int productionId = productionIdInteger != null ? productionIdInteger : 0;
+
+			Integer quantityInteger = (Integer) component.get(i).get("quantity");
+			int quantity = quantityInteger != null ? quantityInteger : 0;
+
 			
 			componentDto.setItem_code(itemCode);
 			componentDto.setLocation_code(locationCode);
