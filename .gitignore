@@ -1,4 +1,5 @@
-/target/
+HELP.md
+target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
@@ -11,8 +12,6 @@
 .settings
 .springBeans
 .sts4-cache
-.metadata/.plugins/org.*
-
 
 ### IntelliJ IDEA ###
 .idea
@@ -22,25 +21,16 @@
 
 ### NetBeans ###
 /nbproject/private/
-/build/
 /nbbuild/
 /dist/
 /nbdist/
 /.nb-gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
 
-<<<<<<< HEAD
+### VS Code ###
+.vscode/
+
 ### Commit Message ###
 gitTemplate.txt
-=======
-### OS Generated ###
-.DS_Store
-Thumbs.db
-
-### Logs and Temp ###
-*.log
-*.tmp
-
-### Environment Configurations ###
-src/main/resources/application*.properties
->>>>>>> dc321b177ca346dc6e7799e99cc3d897f1344115
-/.metadata/
